@@ -32,8 +32,10 @@ public class XMLFile {
         Result resultadoObj;
         try {            
             JSch jsch = new JSch();
-            String password = "ralopez";
-            Session session = jsch.getSession("ralopez", "localhost", 22);
+            String password = java.util.ResourceBundle.getBundle("setting").getString("password");
+            String username = java.util.ResourceBundle.getBundle("setting").getString("username");
+            String ftpserver = java.util.ResourceBundle.getBundle("setting").getString("ftpserver");
+            Session session = jsch.getSession(username, ftpserver, 22);
             
             UserInfo ui = new SUserInfo(password, null);
             session.setUserInfo(ui);
