@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./layout/template.xhtml"
+                xmlns:pou="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <ui:define name="content">
+        <h:form enctype="multipart/form-data">
+            <pou:messages showDetail="true"/>
+            <pou:fileUpload mode="advanced"  auto="false" multiple="false"  
+                            fileUploadListener="#{loadFileController.loadFile}"
+                            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"  />
+        </h:form> 
+    </ui:define>
+
+</ui:composition>
